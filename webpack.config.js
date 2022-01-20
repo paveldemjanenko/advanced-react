@@ -3,7 +3,13 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   watch: true,
-  entry: ['./lib/components/index.js'],
+  resolve: {
+    modules: [
+      path.resolve('./lib'),
+      path.resolve('./node_modules'),
+    ]
+  },
+  entry: ['./lib/renderers/dom.js'],
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
